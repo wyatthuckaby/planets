@@ -31,10 +31,7 @@ Mongoose Schemas are very handy in helping you identify the properties that need
 //DATA MODEL SCHEMA EXAMPLE
 let GalaxySchemaModel = {
   name: { type: String, required: true },
-  description: { type: String },
-  // Relations
-  solarSystems: [{ type: ObjectId, ref: 'System' }],
-  stars: [{ type: ObjectId, ref: 'Star' }]
+  description: { type: String }
 }
 
 let SolarSystemSchemaModel = {
@@ -43,7 +40,6 @@ let SolarSystemSchemaModel = {
   // Relations
   galaxyId: { type: ObjectId, ref: 'System' }, //NOTICE NO [ ] HERE - belongsTo
   starId: { type: ObjectId, ref: 'Star' }, //OR HERE - hasOne
-	planets: [{ type: ObjectId, ref: 'Planet' }] //YEP BACK AGAIN - hasMany
 }
 ```
 
